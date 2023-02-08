@@ -5,8 +5,22 @@ const reviewsAPI = axios.create({
 });
 
 export const getReviews = () => {
-    let path = "/reviews";
+    let path = `/reviews`;
     return reviewsAPI.get(path).then(({ data }) => {
         return data.reviews;
+    });
+};
+
+export const getReviewById = (review_id) => {
+    let path = `/reviews/${review_id}`;
+    return reviewsAPI.get(path).then(({ data }) => {
+        return data.review;
+    });
+};
+
+export const getUsers = () => {
+    let path = "/users";
+    return reviewsAPI.get(path).then(({ data }) => {
+        return data.users;
     });
 };
