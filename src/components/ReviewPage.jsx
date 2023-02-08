@@ -27,7 +27,7 @@ function ReviewPage() {
   if (isError) {
     return <p>Error</p>
   }
-  
+
   return (
     <div>
       <Post review={review}/>

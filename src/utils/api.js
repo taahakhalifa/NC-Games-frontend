@@ -24,3 +24,12 @@ export const getUsers = () => {
         return data.users;
     });
 };
+
+export const getComments = (review_id) => {
+    let path = `/reviews/${review_id}/comments`;
+    return reviewsAPI
+        .get(path, { params: { review_id: review_id } })
+        .then(({ data }) => {
+            return data.comments;
+        });
+};
