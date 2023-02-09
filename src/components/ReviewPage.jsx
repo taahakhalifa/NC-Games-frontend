@@ -1,38 +1,44 @@
-import React, { useState, useEffect, useContext } from 'react'
-import { useParams } from 'react-router-dom';
-import Post from './Post';
-import { ReviewContext } from '../contexts/ReviewContext';
-import { getReviewById } from '../utils/api';
-
+import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import Post from "./Post";
+import { ReviewContext } from "../contexts/ReviewContext";
+import { getReviewById } from "../utils/api";
 
 function ReviewPage() {
-  const { review_id } = useParams()
-  const [review, setReview] = useState({})
-  const { isLoading, setIsLoading, isError, setIsError } = useContext(ReviewContext)
+    const { review_id } = useParams();
+    const [review, setReview] = useState({});
+    const { isLoading, setIsLoading, isError, setIsError } =
+        useContext(ReviewContext);
 
-  useEffect(() => {
-    getReviewById(review_id).then((reviewFromApi) => {
-      setIsLoading(false)
-      setReview(reviewFromApi)
-    }).catch((err) => {
-      setIsLoading(true)
-      setIsError(true)
-    })
-  }, [review_id])
+    console.log(review_id, "<--- outside useEffect");
 
-  if (isLoading) {
-    return <p>Loading...</p>
-  }
+    useEffect(() => {
+        getReviewById(review_id)
+            .then((reviewFromApi) => {
+                console.log(review_id, "<--- inside useEffect");
+                setIsLoading(false);
+                setReview(reviewFromApi);
+            })
+            .catch((err) => {
+                setIsLoading(true);
+                setIsError(true);
+            });
+            
+    }, [review_id, setIsError, setIsLoading]);
 
-  if (isError) {
-    return <p>Error</p>
-  }
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
 
-  return (
-    <div>
-      <Post review={review}/>
-    </div>
-  )
+    if (isError) {
+        return <p>Error</p>;
+    }
+
+    return (
+        <div>
+            <Post review={review} />
+        </div>
+    );
 }
 
-export default ReviewPage
+export default ReviewPage;

@@ -1,10 +1,12 @@
 import React from "react";
 import { useContext } from "react";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { ReviewContext } from "../contexts/ReviewContext";
-import { getComments } from "../utils/api";
+import { getCommentsById } from "../utils/api";
 
 function Comments({ review }) {
+    const { review_id } = useParams()
     let date = review.created_at
         ? review.created_at.slice(0, 10).replace(/-/g, " ").split(" ")
         : "";
@@ -13,13 +15,9 @@ function Comments({ review }) {
     const { isLoading, setIsLoading, isError, setIsError } =
         useContext(ReviewContext);
     const [comments, setComments] = useState([]);
-    const review_id = review.review_id;
 
     useEffect(() => {
-        console.log(
-            `Making request to: https://taahakhalifa-nc-games-api.onrender.com/api/reviews/${review_id}/comments`
-        );
-        getComments(review_id)
+        getCommentsById(review_id)
             .then((commentsFromApi) => {
                 setIsLoading(false);
                 setComments(commentsFromApi);
@@ -28,7 +26,7 @@ function Comments({ review }) {
                 setIsLoading(true);
                 setIsError(true);
             });
-    }, [review_id]);
+    }, [review_id, setIsError, setIsLoading]);
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -45,7 +43,6 @@ function Comments({ review }) {
                     <h2 className="comment-section-header">Comments</h2>
                     <ul className="card-list">
                         {comments.map((comment) => {
-                            console.log(comment);
                             return (
                                 <li
                                     className="comment-list"
@@ -54,15 +51,15 @@ function Comments({ review }) {
                                     <div className="comment-section">
                                         <div className="comment">
                                             <div className="vote-container">
-                                                <div className="vote-button up-vote">
+                                                <button className="vote-button up-vote">
                                                     Up
-                                                </div>
+                                                </button>
                                                 <p className="voting-text">
                                                     16
                                                 </p>
-                                                <div className="vote-button down-vote">
+                                                <button className="vote-button down-vote">
                                                     Down
-                                                </div>
+                                                </button>
                                             </div>
                                             <div className="comment-body">
                                                 <p className="comment-author">

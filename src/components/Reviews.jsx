@@ -1,4 +1,4 @@
-import React, { useEffect, useState , useContext} from 'react'
+import React, { useEffect, useContext} from 'react'
 import { ReviewContext } from '../contexts/ReviewContext'
 import { getReviews } from "../utils/api"
 import Nav from "./Nav"
@@ -17,7 +17,7 @@ function Reviews() {
       setIsLoading(true)
       setIsError(true)
     })
-  }, [])
+  }, [setIsError, setIsLoading, setReviews])
 
   if (isLoading) {
     return <p>Loading...</p>

@@ -3,7 +3,6 @@ import Votes from "./Votes";
 import Comments from "./Comments";
 
 function Post({ review }) {
-
     const capitlised = review.category ? review.category.toUpperCase() : "";
     const categoryName = capitlised.replace(/-/g, " ");
 
@@ -31,7 +30,7 @@ function Post({ review }) {
                     <div className="post-body">
                         <img
                             src={review.review_img_url}
-                            alt={`${review.designer} image`}
+                            alt={`${review.designer} product pic`}
                             className="post-img"
                         />
                         <p className="post-text">{review.review_body}</p>
