@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import Reviews from "./components/Reviews";
-import SingleReview from "./components/SingleReview";
+import ReviewPage from "./components/ReviewPage";
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                 <Route path="/reviews" element={<Reviews />}></Route>
                 <Route
                     path="/reviews/:review_id"
-                    element={<SingleReview />}
+                    element={<ReviewPage />}
                 ></Route>
             </Routes>
         </div>

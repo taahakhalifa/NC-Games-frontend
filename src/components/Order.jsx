@@ -2,11 +2,11 @@ import React from 'react'
 
 function Order() {
   return (
- <div class="dropdown">
+ <div className="dropdown">
     <button>Order</button>
-    <div class="dropdown-content">
-      <a class="dropdown-item" value="desc">Descending (default)</a>
-      <a class="dropdown-item" value="asc">Ascending</a>
+    <div className="dropdown-content">
+      <a className="dropdown-item" value="desc" href="#">Descending (default)</a>
+      <a className="dropdown-item" value="asc" href="#">Ascending</a>
     </div>
   </div>
 

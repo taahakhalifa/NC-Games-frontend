@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState , useContext} from 'react'
+import { ReviewContext } from '../contexts/ReviewContext'
 import { getReviews } from "../utils/api"
 import Nav from "./Nav"
 import ReviewCard from './ReviewCard'
 
 function Reviews() {
-  const [reviews, setReviews] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [isError, setIsError] = useState(false)
-
+  const { reviews, setReviews, isLoading, setIsLoading, isError, setIsError } = useContext(ReviewContext)
 
   useEffect(() => {
     getReviews()
