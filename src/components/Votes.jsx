@@ -17,8 +17,7 @@ function Votes({ review }) {
         });
         patchReviewById(review.review_id, decrease);
     };
-    // console.log(isNaN(review.votes));
-    // const votes = isNaN(review.votes) ? 0 : review.votes;
+
     const votes = review.votes
     const votingText = votes + voteChange;
 

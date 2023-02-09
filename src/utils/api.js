@@ -41,3 +41,14 @@ export const patchReviewById = (review_id, votesInc) => {
         return data;
     });
 };
+
+export const postComment = (newComment, review_id, username) => {
+    let path = `/reviews/${review_id}/comments`;
+    const postBody = {
+        username: username,
+        body: newComment,
+    };
+    return reviewsAPI.post(path, postBody).then(({ data }) => {
+        return data.comment;
+    });
+};

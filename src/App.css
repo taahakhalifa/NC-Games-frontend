@@ -1,51 +1,50 @@
 .App {
-  text-align: center;
-  font-family: "Manrope";
+    text-align: center;
+    font-family: "Manrope";
 }
 /* ------------------------ Homepage ---------------------- */
 
 .homepage {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 50px;
-  background-color: #F7F7F7;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px #CCCCCC;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px #cccccc;
 }
 
 .homepage-title {
-  font-size: 36px;
-  color: #333;
-  text-shadow: 1px 1px #CCCCCC;
-  margin-bottom: 20px;
+    font-size: 36px;
+    color: #333;
+    text-shadow: 1px 1px #cccccc;
+    margin-bottom: 20px;
 }
 
 .homepage-info {
-  font-size: 18px;
-  color: #555;
-  line-height: 1.5;
-  margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
 }
 
 span strong {
-  color: #0093ff;
-  text-shadow: 1px 1px #CCCCCC;
+    color: #0093ff;
+    text-shadow: 1px 1px #cccccc;
 }
-
 
 /* ------------------------ Header ---------------------- */
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #333;
-  color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
 }
 
 .header-content {
-  margin: 0 
+    margin: 0;
 }
 
 .logged-in-user {
@@ -56,426 +55,534 @@ span strong {
 }
 
 .logged-in-username {
-  color: #fff;
-  margin: 0;
-  padding-left: 10px;
-  padding-right: 20px;
-  font-size: 25px;
-  font-family: 'Manrope', sans-serif;
-  }
+    color: #fff;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 25px;
+    font-family: "Manrope", sans-serif;
+}
 
 .logged-in-img {
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
 }
 
 .logged-in-img:hover {
-  transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 300ms;
-  box-shadow: 0px 0px 2px 1px blue;
-  border: 1px solid #82a0bc;
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) 300ms;
+    box-shadow: 0px 0px 2px 1px blue;
+    border: 1px solid #82a0bc;
 }
 
-
 .Login-Button {
-  background-color: green;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .SignOut-Button {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .Back-Button {
-  background-color: blue;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 18px;
-  cursor: pointer;
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 /* ------------------------ Reviews ---------------------- */
-h2 {
-  font-size: 35px;
-  padding-top: 3%;
-  color: #333;
-  margin-bottom: 20px;
+.list.title {
+    font-size: 35px;
+    padding-top: 3%;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .card-list {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 10px;
-  justify-content: space-evenly;
-  padding-left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    margin: 10px;
+    justify-content: space-evenly;
+    padding-left: 0;
 }
 
-
 .review-list {
-  box-shadow: 2px 5px 25px #d2d2d2;
-  border-radius: 50px;
-  margin: 10px;
-  margin-top: 20px;
-  width: 280px;
-  height: 400px; 
-  padding: 30px;
-  margin-bottom: 5%;
-  list-style: none;
-  position: relative;
+    box-shadow: 2px 5px 25px #d2d2d2;
+    border-radius: 50px;
+    margin: 10px;
+    margin-top: 20px;
+    width: 280px;
+    height: 400px;
+    padding: 30px;
+    margin-bottom: 5%;
+    list-style: none;
+    position: relative;
+    margin-right: 40px;
 }
 
 .author {
-  color: #666666;
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 50px
+    color: #666666;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 50px;
 }
 
 .Read-Review {
-  background-color: darkorchid;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-  position: absolute;
-  bottom: 40px; 
-  transform: translateX(-50%);
-  transition: background-color 0.3s ease;
+    background-color: darkorchid;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 40px;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease;
 }
 
 .Read-Review:hover {
-  background-color: lightslategray;
+    background-color: lightslategray;
 }
 
 h3 {
-  font-size: 20px;
-  text-align: center;
-  padding-top: 30px;
-  margin-top: 5px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 30px;
+    margin-top: 5px;
 }
 
 .image-list-image {
-  width: 100%;
-  height: 50%;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
 }
-
 
 /* ------------------------ Nav ---------------------- */
 
 .Nav {
-  padding: 5%;
-  display: flex;
-  justify-content:space-evenly;
-  }
-  
-/* ------------------------ Dropdown ---------------------- */
-  
-  .dropdown {
-  position: relative;
-  display: inline-block;
-  width: 200px;
-  }
-  
-  .dropdown-content {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  }
-  
-  .dropdown:hover .dropdown-content {
-  display: block;
-  }
-  
-  .dropdown-item {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  }
-  
-  .dropdown-item:hover {
-  background-color: #f1f1f1;
-  }
-  
-  .dropdown button {
-  background-color: #007bff;
-  color: white;
-  padding: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    padding: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
 
-  }
-  
-  .dropdown button:hover {
-  background-color: #0069d9;
-  }
+/* ------------------------ Dropdown ---------------------- */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown button {
+    background-color: #007bff;
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown button:hover {
+    background-color: #0069d9;
+}
 
 /* ------------------------ Users ---------------------- */
+.list-title {
+    font-size: 35px;
+    padding-top: 3%;
+    color: #333;
+    margin-bottom: 20px;
+}
+
 .card-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
 }
 
 .user-card {
-  width: 300px;
-  align-content: flex-start;
-  float: left;
-  height: 420px;
-  margin: 20px;
-  border-radius: 30px;
-  box-shadow: 2px 2px 10px #CCCCCC;
-  overflow: hidden;
+    width: 300px;
+    align-content: flex-start;
+    float: left;
+    height: 420px;
+    margin: 20px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px #cccccc;
+    overflow: hidden;
 }
 
 .user-card-avatar {
-  height: 200px;
-  object-fit: cover;
+    height: 200px;
+    object-fit: cover;
 }
 
 .user-card-info {
-  padding: 20px;
-  background-color: white;
+    padding: 20px;
+    background-color: white;
 }
 
 .user-card-username {
-  font-size: 24px;
-  color: #333;
-  text-shadow: 1px 1px #CCCCCC;
-  margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-shadow: 1px 1px #cccccc;
+    margin-bottom: 20px;
 }
 
 .user-card-name {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 20px;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
 }
 
 .user-card-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #ae0f99;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    width: 100%;
+    padding: 10px;
+    background-color: #ae0f99;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .user-card-button:hover {
-  width: 100%;
-  padding: 10px;
-  background-color: #54254d;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  font-size: 18px;
-  cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    background-color: #54254d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 /* ------------------------ Review ---------------------- */
 
 section.blue-background {
-  background-color: #0079d3;
-  height: 300vh;
-  font-family: Arial, sans-serif;
+    background-color: #0079d3;
+    height: 400vh;
+    font-family: Arial, sans-serif;
 }
 
 .post-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .post-container.white-background {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
 }
 
 .post-header {
-  display: flex;
-  align-items: center;
-  padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
 }
 
 .vote-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .vote-button {
-  width: 50px;
-  height: 50px;
-  border: 1px solid gray;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .up-vote {
-  color: green;
+    color: green;
 }
 
 .down-vote {
-  color: red;
+    color: red;
 }
 
 .voting-text {
-  font-size: 16px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .post-info {
-  flex: 1;
-  padding-left: 20px;
+    flex: 1;
+    padding-left: 20px;
 }
 
 .post-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .post-img {
-  width: 90%;
-  height: auto;
+    width: 90%;
+    height: auto;
 }
 
 .post-category,
 .post-author,
 .post-created-at {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 /* ------------------------ Comments ---------------------- */
 
 .comment-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
 
 .comment-container.white-background {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 80%;
-  max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
 }
 
 .comment-container.white-background:nth-child(2) {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .comment-section-header {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .comment-list {
-  margin: 20px;
-  background-color: lightgray;
-  padding: 20px 0;
-  border-bottom: 1px solid gray;
-  border-radius: 10px;
-  margin-bottom: 20px;
+    margin: 20px;
+    background-color: lightgray;
+    padding: 20px 0;
+    border-bottom: 1px solid gray;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .comment-item {
-  font-size: 16px;
-  margin-bottom: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
 }
 
 .comment-text {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .comment-author {
-  color: red;
-  font-size: 18px;
-  margin-right: 10px;
+    color: red;
+    font-size: 18px;
+    margin-right: 10px;
 }
 
 .comment-date {
-  font-size: 14px;
-  color: gray;
+    font-size: 14px;
+    color: gray;
 }
 
 .vote-container {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
 }
 
 .vote-button {
-  width: 30px;
-  height: 30px;
-  background-color: lightblue;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 16px;
-  cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: lightblue;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .voting-text {
-  font-size: 18px;
-  margin: 0 10px;
+    font-size: 18px;
+    margin: 0 10px;
 }
 
 .up-vote {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .down-vote {
-  margin-top: 10px;
+    margin-top: 10px;
 }
 
 .comment-body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .comment {
+    display: flex;
+}
+
+/* ------------------------ Comment Adder ---------------------- */
+
+.add-comment-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.add-comment-container.white-background {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.add-comment-container.white-background:nth-child(2) {
+    margin-top: 40px;
+}
+
+.add-comment-container {
+    width: 50%;
+    padding: 1rem;
+}
+
+.what-are-your-thoughts {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  }
+  
+  .add-comment-adder {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  color: #333;
+  }
+
+#newComment {
+    width: 70%;
+    height: 4rem;
+    margin-bottom: 20px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+    resize: none;
+}
+
+label[for="newComment"] {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.add-comment-button {
+    background-color: blue;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.add-comment-button:hover {
+    background-color: #2f6db7;
+}
+
+/* ------------------------ Media Queries ---------------------- */
+
+@media only screen and (max-width: 767px) {
+    .post-container.white-background {
+        width: 90%;
+    }
+
+    .comment-container.white-background {
+        width: 90%;
+    }
+
+    .add-comment-container.white-background {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .post-container.white-background {
+        width: 100%;
+    }
+
+    .comment-container.white-background {
+        width: 100%;
+    }
+
+    .add-comment-container.white-background {
+        width: 100%;
+    }
 }
