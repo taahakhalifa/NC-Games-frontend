@@ -303,6 +303,7 @@ h3 {
 
 section.blue-background {
   background-color: #0079d3;
+  height: 300vh;
   font-family: Arial, sans-serif;
 }
 
@@ -310,10 +311,11 @@ section.blue-background {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh
 }
 
 .post-container.white-background {
+  margin-top: 20px;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -325,7 +327,6 @@ section.blue-background {
   display: flex;
   align-items: center;
   padding-bottom: 20px;
-  border-bottom: 1px solid gray;
 }
 
 .vote-container {
@@ -372,8 +373,109 @@ section.blue-background {
   margin-bottom: 10px;
 }
 
+.post-img {
+  width: 90%;
+  height: auto;
+}
+
 .post-category,
 .post-author,
 .post-created-at {
   font-size: 16px;
+}
+
+/* ------------------------ Comments ---------------------- */
+
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.comment-container.white-background {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.comment-container.white-background:nth-child(2) {
+  margin-top: 20px;
+}
+
+.comment-section-header {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comment-list {
+  margin: 20px;
+  background-color: lightgray;
+  padding: 20px 0;
+  border-bottom: 1px solid gray;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.comment-item {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.comment-text {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comment-author {
+  color: red;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.comment-date {
+  font-size: 14px;
+  color: gray;
+}
+
+.vote-container {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.vote-button {
+  width: 30px;
+  height: 30px;
+  background-color: lightblue;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.voting-text {
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+.up-vote {
+  margin-bottom: 10px;
+}
+
+.down-vote {
+  margin-top: 10px;
+}
+
+.comment-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  display: flex;
 }
