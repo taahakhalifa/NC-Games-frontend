@@ -1,20 +1,16 @@
 import React from "react";
-import { useContext } from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ReviewContext } from "../contexts/ReviewContext";
 import { getCommentsById } from "../utils/api";
 
 function Comments({ review }) {
     const { review_id } = useParams()
-    let date = review.created_at
-        ? review.created_at.slice(0, 10).replace(/-/g, " ").split(" ")
-        : "";
-    let realDate = `${date[2]}/${date[1]}/${date[0]}`;
-
-    const { isLoading, setIsLoading, isError, setIsError } =
-        useContext(ReviewContext);
     const [comments, setComments] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
+
+    let date = review.created_at.slice(0, 10).replace(/-/g, " ").split(" ")
+    let realDate = `${date[2]}/${date[1]}/${date[0]}`;
 
     useEffect(() => {
         getCommentsById(review_id)

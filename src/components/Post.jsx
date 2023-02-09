@@ -3,12 +3,10 @@ import Votes from "./Votes";
 import Comments from "./Comments";
 
 function Post({ review }) {
-    const capitlised = review.category ? review.category.toUpperCase() : "";
+    const capitlised = review.category.toUpperCase()
     const categoryName = capitlised.replace(/-/g, " ");
 
-    let date = review.created_at
-        ? review.created_at.slice(0, 10).replace(/-/g, " ").split(" ")
-        : "";
+    let date = review.created_at.slice(0, 10).replace(/-/g, " ").split(" ")
     let realDate = `${date[2]}/${date[1]}/${date[0]}`;
 
     return (
