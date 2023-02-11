@@ -16,11 +16,9 @@ function AddComment() {
         setError("");
         postComment(newComment, review_id, loggedInUser.username)
             .then((commentFromApi) => {
-                console.log(commentFromApi);
                 setComments((currComments) => [commentFromApi, ...currComments]);
             })
             .catch((error) => {
-                console.error(error);
                 setError("An error occurred while posting your comment. Please try again later.");
             });
     };

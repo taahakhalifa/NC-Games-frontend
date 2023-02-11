@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { useEffect, useState } from "react";
 import { ReviewContext } from "../contexts/ReviewContext";
-import { getCommentsById } from "../utils/api";
+import { UserContext } from "../contexts/UserContext";
+import { deleteComment, getCommentsById } from "../utils/api";
+import CommentVotes from "./CommentVotes";
 
 function Comments({ review }) {
     const review_id = review.review_id;
     const { comments, setComments } = useContext(ReviewContext);
+    const { loggedInUser } = useContext(UserContext);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
@@ -20,6 +23,18 @@ function Comments({ review }) {
                 setIsError(true);
             });
     }, [review_id]);
+
+    function handleDelete(comment_id) {
+        if (window.confirm("Are you sure you want to delete this comment?")) {
+            deleteComment(comment_id).then(() => {
+                setComments((currComments) => {
+                    return currComments.filter((comment) => {
+                        return comment.comment_id !== comment_id;
+                    });
+                });
+            });
+        }
+    }
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -36,38 +51,39 @@ function Comments({ review }) {
                     <h2 className="comment-section-header">Comments</h2>
                     <ul className="card-list">
                         {comments.map((comment, index) => {
-                            let date = comment.created_at
-                                .slice(0, 10)
-                                .replace(/-/g, " ")
-                                .split(" ");
-                            let time = comment.created_at.slice(11, 19)
-
-                            let realDate = `${date[2]}/${date[1]}/${date[0]} ${time}`
                             return (
                                 <li key={index} className="comment-list">
                                     <div className="comment-section">
                                         <div className="comment">
-                                            <div className="vote-container">
-                                                <button className="vote-button up-vote">
-                                                    Up
-                                                </button>
-                                                <p className="voting-text">
-                                                    {comment.votes}
-                                                </p>
-                                                <button className="vote-button down-vote">
-                                                    Down
-                                                </button>
-                                            </div>
                                             <div className="comment-body">
-                                                <p className="comment-author">
-                                                    @{comment.author}
-                                                </p>
+                                                <div className="comment-header-and-delete">
+                                                    <p className="comment-author">
+                                                        @{comment.author}
+                                                    </p>
+                                                    {loggedInUser.username ===
+                                                    comment.author ? (
+                                                        <div className="delete-button">
+                                                            <button
+                                                                variant="light"
+                                                                className="delete-button"
+                                                                onClick={() =>
+                                                                    handleDelete(
+                                                                        comment.comment_id
+                                                                    )
+                                                                }
+                                                            >
+                                                                {" "}
+                                                                DELETE
+                                                            </button>
+                                                        </div>
+                                                    ) : null}
+                                                </div>
                                                 <p className="comment-text">
                                                     "{comment.body}"
                                                 </p>
-                                                <p className="comment-date">
-                                                    {realDate}
-                                                </p>
+                                                <CommentVotes
+                                                    comment={comment}
+                                                />
                                             </div>
                                         </div>
                                     </div>
