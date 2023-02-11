@@ -82,3 +82,21 @@ export const getReviewsByCategory = (slug, sort_by, order) => {
             return data.reviews;
         });
 };
+
+export const deleteComment = (comment_id) => {
+    let path = `/comments/${comment_id}`;
+    return reviewsAPI.delete(path).then(({ data }) => {
+        console.log(data);
+        return data;
+    });
+};
+
+export const patchCommentById = (comment_id, votesInc) => {
+    let path = `/comments/${comment_id}`;
+    const patchBody = {
+        inc_votes: votesInc,
+    };
+    return reviewsAPI.patch(path, patchBody).then(({ data }) => {
+        return data;
+    });
+};

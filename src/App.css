@@ -418,7 +418,7 @@ h3 {
 
 section.blue-background {
     background-color: #0079d3;
-    height: 400vh;
+    height: 100%;
     font-family: Arial, sans-serif;
 }
 
@@ -431,7 +431,6 @@ section.blue-background {
 .post-container.white-background {
     margin: 20px auto;
     background-color: #fff;
-    padding: 20px;
     border-radius: 10px;
     width: 80%;
     max-width: 800px;
@@ -443,23 +442,25 @@ section.blue-background {
     padding-bottom: 20px;
 }
 
-.vote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
+.post-info {
+    flex: 1;
 }
 
-.vote-button {
-    width: 50px;
-    height: 50px;
-    border: 1px solid gray;
-    border-radius: 25px;
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.vote-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 5px;
+}
+
+.voting-text {
+    font-size: 16px;
 }
 
 .up-vote {
@@ -470,25 +471,13 @@ section.blue-background {
     color: red;
 }
 
-.voting-text {
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.post-info {
-    flex: 1;
-    padding-left: 20px;
-}
-
-.post-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
+.post-text {
+    text-align: left;
+    padding: 0 60px;
 }
 
 .post-img {
-    width: 90%;
+    width: 85%;
     height: auto;
 }
 
@@ -504,15 +493,14 @@ section.blue-background {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
 }
 
 .comment-container.white-background {
     background-color: #fff;
-    padding: 20px;
     border-radius: 10px;
     width: 80%;
     max-width: 800px;
+    margin-bottom: 20px;
 }
 
 .comment-container.white-background:nth-child(2) {
@@ -526,7 +514,8 @@ section.blue-background {
 }
 
 .comment-list {
-    margin: 10px 120px;
+    display: flex;
+    align-items: center;
     background-color: lightgray;
     padding: 10px 0;
     border-bottom: 1px solid gray;
@@ -540,9 +529,9 @@ section.blue-background {
 }
 
 .comment-text {
-    display: flex;
     align-items: center;
     margin-top: 10px;
+    text-align: center;
 }
 
 .comment-author {
@@ -552,20 +541,39 @@ section.blue-background {
 }
 
 .comment-date {
+    margin-left: 21%;
     font-size: 14px;
     color: gray;
 }
 
-.vote-container {
+.vote-container-comment {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    margin-right: 20px;
-    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.up-vote-comment {
+    color: green;
+    margin-left: 15px;
+}
+
+.down-vote-comment {
+    color: red;
+    margin-right: 15px;
+}
+
+.voting-text-comment {
+    font-size: 16px;
 }
 
 .vote-button {
     width: 30px;
     height: 30px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: lightblue;
     border-radius: 50%;
     text-align: center;
@@ -573,23 +581,10 @@ section.blue-background {
     cursor: pointer;
 }
 
-.voting-text {
-    font-size: 18px;
-    margin: 0 10px;
-}
-
-.up-vote {
-    margin-bottom: 10px;
-}
-
-.down-vote {
-    margin-top: 10px;
-}
-
 .comment-body {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
+    width: 600px;
 }
 
 .comment {
@@ -602,13 +597,12 @@ section.blue-background {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* height: 100vh; */
 }
 
 .add-comment-container.white-background {
     background-color: #fff;
-    padding: 20px;
     border-radius: 10px;
+
     width: 80%;
     max-width: 800px;
     margin-bottom: 20px;
@@ -620,7 +614,6 @@ section.blue-background {
 
 .add-comment-container {
     width: 50%;
-    padding: 1rem;
 }
 
 .what-are-your-thoughts {
@@ -636,6 +629,7 @@ section.blue-background {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 1.4rem;
   color: #333;
   }
