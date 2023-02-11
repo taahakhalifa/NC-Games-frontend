@@ -11,12 +11,18 @@ export const getUsers = () => {
     });
 };
 
-export const getReviews = () => {
+export const getReviews = (sort_by, order) => {
     let path = `/reviews`;
-    return reviewsAPI.get(path).then(({ data }) => {
-        console.log(data);
-        return data.reviews;
-    });
+    return reviewsAPI
+        .get(path, {
+            params: {
+                sort_by: sort_by,
+                order: order,
+            },
+        })
+        .then(({ data }) => {
+            return data.reviews;
+        });
 };
 
 export const getReviewById = (review_id) => {
@@ -43,13 +49,14 @@ export const patchReviewById = (review_id, votesInc) => {
     });
 };
 
-export const postComment = (newComment, review_id, username) => {
+export const postComment = (comment, review_id, username) => {
     let path = `/reviews/${review_id}/comments`;
     const postBody = {
         username: username,
-        body: newComment,
+        body: comment,
     };
     return reviewsAPI.post(path, postBody).then(({ data }) => {
+        console.log(data);
         return data.comment;
     });
 };
@@ -61,12 +68,14 @@ export const getCategories = () => {
     });
 };
 
-export const getReviewsByCategory = (slug) => {
+export const getReviewsByCategory = (slug, sort_by, order) => {
     let path = `/reviews`;
     return reviewsAPI
         .get(path, {
             params: {
                 category: slug,
+                sort_by: sort_by,
+                order: order,
             },
         })
         .then(({ data }) => {

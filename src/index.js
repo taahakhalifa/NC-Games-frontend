@@ -5,14 +5,17 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { UserProvider } from "./contexts/UserContext";
 import { ReviewProvider } from "./contexts/ReviewContext";
+import { CategoriesProvider } from "./contexts/CategoriesContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <BrowserRouter>
-        <ReviewProvider>
-            <UserProvider>
-                <App />
-            </UserProvider>
-        </ReviewProvider>
+        <CategoriesProvider>
+            <ReviewProvider>
+                <UserProvider>
+                    <App />
+                </UserProvider>
+            </ReviewProvider>
+        </CategoriesProvider>
     </BrowserRouter>
 );

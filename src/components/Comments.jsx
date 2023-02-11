@@ -19,7 +19,7 @@ function Comments({ review }) {
                 setIsLoading(true);
                 setIsError(true);
             });
-    }, [review_id, comments]);
+    }, [review_id]);
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -35,20 +35,16 @@ function Comments({ review }) {
                 <section className="comment-container white-background">
                     <h2 className="comment-section-header">Comments</h2>
                     <ul className="card-list">
-                        {comments.map((comment) => {
-                            // let date = comment.created_at
-                            // .slice(0, 10)
-                            // .replace(/-/g, " ")
-                            // .split(" ");
-                            
-                            // console.log(date);
-                            // let realDate = `${date[2]}/${date[1]}/${date[0]}`;
+                        {comments.map((comment, index) => {
+                            let date = comment.created_at
+                                .slice(0, 10)
+                                .replace(/-/g, " ")
+                                .split(" ");
+                            let time = comment.created_at.slice(11, 19)
 
+                            let realDate = `${date[2]}/${date[1]}/${date[0]} ${time}`
                             return (
-                                <li
-                                    key={comment.comment_id}
-                                    className="comment-list"
-                                >
+                                <li key={index} className="comment-list">
                                     <div className="comment-section">
                                         <div className="comment">
                                             <div className="vote-container">
@@ -70,7 +66,7 @@ function Comments({ review }) {
                                                     "{comment.body}"
                                                 </p>
                                                 <p className="comment-date">
-                                                    {/* Commented on: {realDate} */}
+                                                    {realDate}
                                                 </p>
                                             </div>
                                         </div>
