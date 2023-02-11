@@ -1,10 +1,7 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-
-
+import { Link } from 'react-router-dom'
 
 function CategoryCard({ categories }) {
-const navigate = useNavigate()
   return (
     <div>
       <ul className='card-list'>
@@ -19,7 +16,7 @@ const navigate = useNavigate()
             <h3 className='category-title'>{realCategory}</h3>
             <p className='category-description'>{category.description}</p>
             <Link
-              to={`/categories/${category.slug}`}
+              to={`/reviews?category=${category.slug}`}
               className="view-games-button"
             >
               View Games

@@ -9,23 +9,29 @@ function AddComment() {
     const { setComments } = useContext(ReviewContext);
     const { loggedInUser } = useContext(UserContext);
     const [newComment, setNewComment] = useState("");
+    const [error, setError] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        postComment(newComment, review_id, loggedInUser.username).then(
-            (commentFromApi) => {
+        setError("");
+        postComment(newComment, review_id, loggedInUser.username)
+            .then((commentFromApi) => {
                 console.log(commentFromApi);
-                setComments((currComments) => {
-                    return [commentFromApi, ...currComments];
-                });
-            }
-        );
+                setComments((currComments) => [commentFromApi, ...currComments]);
+            })
+            .catch((error) => {
+                console.error(error);
+                setError("An error occurred while posting your comment. Please try again later.");
+            });
     };
 
     return (
         <section className="add-comment-wrapper">
             <section className="add-comment-container white-background">
-              <h2 className="what-are-your-thoughts">What are your thoughts?</h2>
+                {error && (
+                    <div className="error-message">{error}</div>
+                )}
+                <h2 className="what-are-your-thoughts">What are your thoughts?</h2>
                 <form className="add-comment-adder" onSubmit={handleSubmit}>
                     <label htmlFor="newComment">Add a Comment</label>
                     <textarea
@@ -42,4 +48,3 @@ function AddComment() {
 }
 
 export default AddComment;
-

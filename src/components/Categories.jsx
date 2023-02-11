@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { CategoriesContext } from '../contexts/CategoriesContext';
 import { getCategories } from '../utils/api';
 import CategoryCard from './CategoryCard';
-
-
 
 function Categories() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const [categories, setCategories] = useState({})
+  const {categories, setCategories} = useContext(CategoriesContext)
 
 
   useEffect(() => {
