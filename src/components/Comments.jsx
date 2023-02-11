@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { ReviewContext } from "../contexts/ReviewContext";
 import { getCommentsById } from "../utils/api";
 
 function Comments({ review }) {
-    const { review_id } = useParams()
-    const [comments, setComments] = useState([]);
+    const review_id = review.review_id;
+    const { comments, setComments } = useContext(ReviewContext);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
 
-    let date = review.created_at.slice(0, 10).replace(/-/g, " ").split(" ")
+    let date = review.created_at.slice(0, 10).replace(/-/g, " ").split(" ");
     let realDate = `${date[2]}/${date[1]}/${date[0]}`;
 
     useEffect(() => {
@@ -22,7 +22,7 @@ function Comments({ review }) {
                 setIsLoading(true);
                 setIsError(true);
             });
-    }, [review_id, setIsError, setIsLoading]);
+    }, [review_id, comments]);
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -31,19 +31,20 @@ function Comments({ review }) {
     if (isError) {
         return <p>Error</p>;
     }
-
+    
     return (
         <div>
             <section className="comment-wrapper">
                 <section className="comment-container white-background">
                     <h2 className="comment-section-header">Comments</h2>
                     <ul className="card-list">
-                        {comments.map((comment) => {
+                        {comments.map((comment, index) => {
+
+                                let date = comment.created_at.slice(0, 10).replace(/-/g, " ").split(" ");
+                                let realDate = `${date[2]}/${date[1]}/${date[0]}`;
+
                             return (
-                                <li
-                                    className="comment-list"
-                                    key={comment.comment_id}
-                                >
+                                <li className="comment-list" key={index}>
                                     <div className="comment-section">
                                         <div className="comment">
                                             <div className="vote-container">
@@ -51,7 +52,7 @@ function Comments({ review }) {
                                                     Up
                                                 </button>
                                                 <p className="voting-text">
-                                                    16
+                                                    {comment.votes}
                                                 </p>
                                                 <button className="vote-button down-vote">
                                                     Down
@@ -81,4 +82,3 @@ function Comments({ review }) {
 }
 
 export default Comments;
-

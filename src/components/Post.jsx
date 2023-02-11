@@ -1,6 +1,7 @@
 import React from "react";
 import Votes from "./Votes";
 import Comments from "./Comments";
+import AddComment from "./AddComment";
 
 function Post({ review }) {
     const capitlised = review.category.toUpperCase()
@@ -35,6 +36,7 @@ function Post({ review }) {
                     </div>
                 </section>
             </section>
+            <AddComment username={review.owner}/>
             <Comments review={review}/>
         </section>
     );
