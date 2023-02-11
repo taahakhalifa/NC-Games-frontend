@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../contexts/UserContext";
 
@@ -23,33 +23,42 @@ function Header({ users, setUsers }) {
         <div>
             {window.location.pathname === "/" ? (
                 <header className="header">
-                    <h1 className="header-content">NC GAMES</h1>
+                    <Link to="/">
+                        <h1 className="header-content active-header">NC GAMES</h1>
+                    </Link>
                     <button className="Login-Button" onClick={handleLogin}>
                         Login
                     </button>
                 </header>
             ) : window.location.pathname === "/login" ? (
                 <header className="header">
-                    <h1 className="header-content">NC GAMES</h1>
+                    <Link to="/">
+                        <h1 className="header-content active-header">NC GAMES</h1>
+                    </Link>
                     <button className="Back-Button" onClick={handleBackButton}>
                         Go Back
                     </button>
                 </header>
             ) : (
                 <header className="header">
-                    <h1 className="header-content">NC GAMES</h1>
+                    <Link to="/">
+                        <h1 className="header-content active-header">NC GAMES</h1>
+                    </Link>
                     <div className="logged-in-user">
                         <img
                             src={loggedInUser.avatar_url}
-                            alt={`${loggedInUser.username} profile picture`}
+                            alt={`${loggedInUser.username} profile pic`}
                             className="logged-in-img"
                         />
                         <p className="logged-in-username">
                             @{loggedInUser.username}
                         </p>
-                    <button className="SignOut-Button" onClick={handleSignOut}>
-                        Sign Out
-                    </button>
+                        <button
+                            className="SignOut-Button"
+                            onClick={handleSignOut}
+                        >
+                            Sign Out
+                        </button>
                     </div>
                 </header>
             )}

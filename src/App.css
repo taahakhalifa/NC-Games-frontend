@@ -45,6 +45,21 @@ span strong {
 
 .header-content {
     margin: 0;
+    text-decoration: none;
+  }
+  
+  .active-header {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  .active-header:visited {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+header a {
+  text-decoration: none;
 }
 
 .logged-in-user {
@@ -105,7 +120,98 @@ span strong {
     cursor: pointer;
 }
 
+/* ------------------------ Header Nav ---------------------- */
+
+.header-nav {
+  background-color: #3f51b5;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.list-title-container {
+  display: flex;
+  justify-content: center;
+  background-color: #3f51b5;
+  padding: 20px 0;
+}
+
+.list-title-reviews,
+.list-title-categories {
+  display: inline-block;
+  text-align: center;
+  margin: 0 80px;
+  padding: 10px 20px;
+  background-color: transparent;
+  font-style: normal;
+  color: #fff;
+  text-decoration: none;
+}
+
+.list-title-reviews:hover,
+.list-title-categories:hover {
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 80px;
+  color: #3f51b5;
+}
+
+
+
+/* ------------------------ Categories ---------------------- */
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  }
+  
+  .category-card {
+  width: 300px;
+  height: 350px;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  }
+  
+  .category-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  }
+  
+  .category-description {
+  font-size: 18px;
+  margin-bottom: 20px;
+  }
+  
+  .view-games-button {
+  background-color: #ae0f99;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  transition: background-color 0.3s ease;
+
+  }
+
+  .view-games-button:hover {
+    background-color: rgb(23, 125, 226);
+}
+
+
 /* ------------------------ Reviews ---------------------- */
+
 .list.title {
     font-size: 35px;
     padding-top: 3%;
@@ -132,7 +238,7 @@ span strong {
     margin-bottom: 5%;
     list-style: none;
     position: relative;
-    margin-right: 40px;
+    margin: 40px;
 }
 
 .author {
@@ -216,16 +322,18 @@ h3 {
 }
 
 .dropdown button {
-    background-color: #007bff;
-    color: white;
-    padding: 16px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #f37335;
+  font-size: 25px;
+  color: white;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+
 .dropdown button:hover {
-    background-color: #0069d9;
+    background-color: #d6ac97;
 }
 
 /* ------------------------ Users ---------------------- */

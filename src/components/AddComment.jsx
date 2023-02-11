@@ -4,7 +4,7 @@ import { postComment } from "../utils/api";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 
-function AddComment({ username }) {
+function AddComment() {
     const { review_id } = useParams();
     const { setComments } = useContext(ReviewContext);
     const { loggedInUser } = useContext(UserContext);
@@ -14,6 +14,7 @@ function AddComment({ username }) {
         e.preventDefault();
         postComment(newComment, review_id, loggedInUser.username).then(
             (commentFromApi) => {
+                console.log(commentFromApi);
                 setComments((currComments) => {
                     return [commentFromApi, ...currComments];
                 });

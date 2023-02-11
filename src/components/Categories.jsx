@@ -1,21 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { useContext } from 'react';
-import { ReviewContext } from '../contexts/ReviewContext';
-import { getReviews } from "../utils/api"
-import Nav from "./Nav"
-import ReviewCard from './ReviewCard'
+import { getCategories } from '../utils/api';
+import CategoryCard from './CategoryCard';
 
-function Reviews() {
+
+
+function Categories() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
-  const { reviews, setReviews } = useContext(ReviewContext)
+  const [categories, setCategories] = useState({})
 
 
   useEffect(() => {
-    getReviews()
-    .then((reviewsFromApi) => {
+    getCategories()
+    .then((categoriesFromApi) => {
       setIsLoading(false)
-      setReviews(reviewsFromApi)
+      setCategories(categoriesFromApi)
     })
     .catch((err) => {
       setIsLoading(true)
@@ -33,10 +32,9 @@ function Reviews() {
 
   return (
     <section>
-      <Nav />
-      <ReviewCard reviews={reviews}/>
+      <CategoryCard categories={categories}/>
     </section>
   )
 }
 
-export default Reviews
+export default Categories

@@ -14,6 +14,7 @@ export const getUsers = () => {
 export const getReviews = () => {
     let path = `/reviews`;
     return reviewsAPI.get(path).then(({ data }) => {
+        console.log(data);
         return data.reviews;
     });
 };
@@ -51,4 +52,24 @@ export const postComment = (newComment, review_id, username) => {
     return reviewsAPI.post(path, postBody).then(({ data }) => {
         return data.comment;
     });
+};
+
+export const getCategories = () => {
+    let path = `/categories`;
+    return reviewsAPI.get(path).then(({ data }) => {
+        return data.categories;
+    });
+};
+
+export const getReviewsByCategory = (slug) => {
+    let path = `/reviews`;
+    return reviewsAPI
+        .get(path, {
+            params: {
+                category: slug,
+            },
+        })
+        .then(({ data }) => {
+            return data.reviews;
+        });
 };
