@@ -21,9 +21,9 @@ function Login() {
             .catch((err) => {
                 setIsLoading(false);
                 setIsError(true);
-                setIsError(err)
+                setError(err)
             });
-    }, []);
+    }, [setIsLoading, setIsError, setUsers]);
 
   if (isLoading) {
     return <p>Loading...</p>

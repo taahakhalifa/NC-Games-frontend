@@ -6,9 +6,9 @@ import { patchCommentById } from "../utils/api";
 function CommentVotes({ comment }) {
     const [voteChange, setVoteChange] = useState(0);
     const {isLoggedIn} = useContext(UserContext)
-    const [isLiked, setIsLiked] = useState(false);
-    const [isDisliked, setIsDisliked] = useState(false);
-    const [hasVoted, setHasVoted] = useState(false);
+    const [setIsLiked] = useState(false);
+    const [setIsDisliked] = useState(false);
+    const [setHasVoted] = useState(false);
     const originalVotes = comment.votes;
     const [newVotes, setNewVotes] = useState(originalVotes);
 

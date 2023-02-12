@@ -10,8 +10,6 @@ function Header() {
         loggedInUser,
         isLoggedIn,
         setIsLoggedIn,
-        prevPath,
-        setPrevPath,
         handlePrevPath,
     } = useContext(UserContext);
 

@@ -25,7 +25,7 @@ function Comments({ review }) {
                 setIsError(true);
                 setError(err)
             });
-    }, [review_id]);
+    }, [review_id, setComments]);
 
     function handleDelete(comment_id) {
         if (window.confirm("Are you sure you want to delete this comment?")) {

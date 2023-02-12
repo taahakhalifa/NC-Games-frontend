@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function UserCard({ user, users }) {
   const navigate = useNavigate()
-  const { setLoggedInUser, setIsLoggedIn, isLoggedIn, prevPath, setPrevPath } = useContext(UserContext);
+  const { setLoggedInUser, setIsLoggedIn, isLoggedIn, prevPath } = useContext(UserContext);
 
   const handleLogin = () => {
     setLoggedInUser(user)
@@ -17,7 +17,7 @@ function UserCard({ user, users }) {
     if (isLoggedIn) {
       navigate(prevPath);
     }
-  }, [isLoggedIn, prevPath]);
+  }, [isLoggedIn, prevPath, navigate]);
   
   return (
     <div >

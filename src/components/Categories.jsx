@@ -25,7 +25,7 @@ function Categories() {
       setIsError(true)
       setError(err)
     })
-  }, [])
+  }, [setCategories])
 
   if (isLoading) {
     return <p>Loading...</p>

@@ -1,16 +1,13 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
 import { patchReviewById } from "../utils/api";
-import { Alert } from "@mui/material";
 
 function Votes({ review }) {
-    const navigate = useNavigate();
     const [voteChange, setVoteChange] = useState(0);
     const { isLoggedIn } = useContext(UserContext);
-    const [isLiked, setIsLiked] = useState(false);
-    const [isDisliked, setIsDisliked] = useState(false);
-    const [hasVoted, setHasVoted] = useState(false);
+    const [setIsLiked] = useState(false);
+    const [setIsDisliked] = useState(false);
+    const [setHasVoted] = useState(false);
     const originalVotes = review.votes;
     const [newVotes, setNewVotes] = useState(originalVotes);
 

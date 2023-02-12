@@ -32,10 +32,11 @@ function Reviews() {
                 setReviews(reviewsFromApi);
             })
             .catch((err) => {
-                setIsLoading(true);
+                setIsLoading(false);
                 setIsError(true);
+                setError(err)
             });
-    }, [sortByQuery, orderQuery, categoryQuery, pageQuery, limitQuery]);
+    }, [sortByQuery, orderQuery, categoryQuery, pageQuery, limitQuery, setReviews]);
 
     if (isLoading) {
         return <p>Loading...</p>;
