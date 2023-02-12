@@ -5,9 +5,6 @@ import { patchReviewById } from "../utils/api";
 function Votes({ review }) {
     const [voteChange, setVoteChange] = useState(0);
     const { isLoggedIn } = useContext(UserContext);
-    const [setIsLiked] = useState(false);
-    const [setIsDisliked] = useState(false);
-    const [setHasVoted] = useState(false);
     const originalVotes = review.votes;
     const [newVotes, setNewVotes] = useState(originalVotes);
 
@@ -15,14 +12,10 @@ function Votes({ review }) {
         if (voteChange === 0) {
             patchReviewById(review.review_id, 1);
             setNewVotes(newVotes + 1);
-            setIsLiked(true);
-            setHasVoted(true);
             setVoteChange(1);
         } else if (voteChange === -1) {
             patchReviewById(review.review_id, 2);
             setNewVotes(newVotes + 2);
-            setIsLiked(true);
-            setHasVoted(true);
             setVoteChange(1);
         }
     };
@@ -31,14 +24,10 @@ function Votes({ review }) {
         if (voteChange === 0) {
             patchReviewById(review.review_id, -1);
             setNewVotes(newVotes - 1);
-            setIsDisliked(true);
-            setHasVoted(true);
             setVoteChange(-1);
         } else if (voteChange === 1) {
             patchReviewById(review.review_id, -2);
             setNewVotes(newVotes - 2);
-            setIsDisliked(true);
-            setHasVoted(true);
             setVoteChange(-1);
         }
     };

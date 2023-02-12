@@ -12,7 +12,6 @@ function Pages({ reviews }) {
 
     const categoryQuery = searchParams.get("category");
 
-
     return (
         <div className="page-button-layout">
             <button
