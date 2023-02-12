@@ -1,44 +1,92 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../contexts/UserContext";
 import { patchReviewById } from "../utils/api";
+import { Alert } from "@mui/material";
 
 function Votes({ review }) {
+    const navigate = useNavigate();
     const [voteChange, setVoteChange] = useState(0);
+    const { isLoggedIn } = useContext(UserContext);
+    const [isLiked, setIsLiked] = useState(false);
+    const [isDisliked, setIsDisliked] = useState(false);
+    const [hasVoted, setHasVoted] = useState(false);
+    const originalVotes = review.votes;
+    const [newVotes, setNewVotes] = useState(originalVotes);
 
-    const increaseVote = (increase) => {
-        setVoteChange((currChange) => {
-            return currChange + increase;
-        });
-        patchReviewById(review.review_id, increase);
+    const increaseVote = () => {
+        if (voteChange === 0) {
+            patchReviewById(review.review_id, 1);
+            setNewVotes(newVotes + 1);
+            setIsLiked(true);
+            setHasVoted(true);
+            setVoteChange(1);
+        } else if (voteChange === -1) {
+            patchReviewById(review.review_id, 2);
+            setNewVotes(newVotes + 2);
+            setIsLiked(true);
+            setHasVoted(true);
+            setVoteChange(1);
+        }
     };
 
-    const decreaseVote = (decrease) => {
-        setVoteChange((currChange) => {
-            return currChange + decrease;
-        });
-        patchReviewById(review.review_id, decrease);
+    const decreaseVote = () => {
+        if (voteChange === 0) {
+            patchReviewById(review.review_id, -1);
+            setNewVotes(newVotes - 1);
+            setIsDisliked(true);
+            setHasVoted(true);
+            setVoteChange(-1);
+        } else if (voteChange === 1) {
+            patchReviewById(review.review_id, -2);
+            setNewVotes(newVotes - 2);
+            setIsDisliked(true);
+            setHasVoted(true);
+            setVoteChange(-1);
+        }
     };
 
-    const votes = review.votes
+    const showError = () => {
+        alert("You must be signed in to vote!");
+    };
+
+    const votes = review.votes;
     const votingText = votes + voteChange;
 
     return (
         <div>
-            <div className="vote-container">
-                <button className="vote-button up-vote" 
-                onClick={() => increaseVote(1)}
-                disabled={voteChange === 1}
-                >
-                    Up
-                </button>
-                <p className="voting-text">{votingText}</p>
-                <button
-                    className="vote-button down-vote"
-                    onClick={() => decreaseVote(-1)}
-                    disabled={voteChange === -1}
-                >
-                    Down
-                </button>
-            </div>
+            {isLoggedIn ? (
+                <div className="vote-container">
+                    <button
+                        className="vote-button up-vote"
+                        onClick={() => increaseVote(1)}
+                        disabled={voteChange === 1}
+                    >
+                        Up
+                    </button>
+                    <p className="voting-text">{votingText}</p>
+                    <button
+                        className="vote-button down-vote"
+                        onClick={() => decreaseVote(-1)}
+                        disabled={voteChange === -1}
+                    >
+                        Down
+                    </button>
+                </div>
+            ) : (
+                <div className="vote-container">
+                    <button className="vote-button up-vote" onClick={showError}>
+                        Up
+                    </button>
+                    <p className="voting-text">{votingText}</p>
+                    <button
+                        className="vote-button down-vote"
+                        onClick={showError}
+                    >
+                        Down
+                    </button>
+                </div>
+            )}
         </div>
     );
 }

@@ -11,13 +11,16 @@ export const getUsers = () => {
     });
 };
 
-export const getReviews = (sort_by, order) => {
+export const getReviews = (sort_by, order, category, page, limit) => {
     let path = `/reviews`;
     return reviewsAPI
         .get(path, {
             params: {
                 sort_by: sort_by,
                 order: order,
+                category: category,
+                p: page,
+                limit: limit,
             },
         })
         .then(({ data }) => {
@@ -56,7 +59,6 @@ export const postComment = (comment, review_id, username) => {
         body: comment,
     };
     return reviewsAPI.post(path, postBody).then(({ data }) => {
-        console.log(data);
         return data.comment;
     });
 };
@@ -68,25 +70,9 @@ export const getCategories = () => {
     });
 };
 
-export const getReviewsByCategory = (slug, sort_by, order) => {
-    let path = `/reviews`;
-    return reviewsAPI
-        .get(path, {
-            params: {
-                category: slug,
-                sort_by: sort_by,
-                order: order,
-            },
-        })
-        .then(({ data }) => {
-            return data.reviews;
-        });
-};
-
 export const deleteComment = (comment_id) => {
     let path = `/comments/${comment_id}`;
     return reviewsAPI.delete(path).then(({ data }) => {
-        console.log(data);
         return data;
     });
 };

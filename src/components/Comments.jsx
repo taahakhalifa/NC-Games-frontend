@@ -1,16 +1,18 @@
-import React, { useContext } from "react";
-import { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ReviewContext } from "../contexts/ReviewContext";
 import { UserContext } from "../contexts/UserContext";
 import { deleteComment, getCommentsById } from "../utils/api";
 import CommentVotes from "./CommentVotes";
+import { Alert, AlertTitle } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function Comments({ review }) {
     const review_id = review.review_id;
     const { comments, setComments } = useContext(ReviewContext);
-    const { loggedInUser } = useContext(UserContext);
+    const { loggedInUser, isLoggedIn } = useContext(UserContext);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
+    const [error, setError] = useState()
 
     useEffect(() => {
         getCommentsById(review_id)
@@ -19,8 +21,9 @@ function Comments({ review }) {
                 setComments(commentsFromApi);
             })
             .catch((err) => {
-                setIsLoading(true);
+                setIsLoading(false);
                 setIsError(true);
+                setError(err)
             });
     }, [review_id]);
 
@@ -41,7 +44,25 @@ function Comments({ review }) {
     }
 
     if (isError) {
-        return <p>Error</p>;
+        return (
+            <Alert severity="error">
+                {" "}
+                <AlertTitle>
+                    <strong>{error.status}</strong>
+                </AlertTitle>
+                <p className="error-message">{error.data.msg}</p>
+                <Link to="/">
+                    <button
+                        className="back-button-error"
+                        onClick={() => {
+                            setIsError(false);
+                        }}
+                    >
+                        Go Back
+                    </button>
+                </Link>
+            </Alert>
+        );
     }
 
     return (
@@ -60,11 +81,17 @@ function Comments({ review }) {
                                                     <p className="comment-author">
                                                         @{comment.author}
                                                     </p>
+                                                <p className="comment-text">
+                                                    "{comment.body}"
+                                                </p>
+                                                </div>
+                                                <CommentVotes
+                                                    comment={comment}
+                                                    />
                                                     {loggedInUser.username ===
-                                                    comment.author ? (
-                                                        <div className="delete-button">
+                                                    comment.author && isLoggedIn ? (
+                                                        <div className="delete-button-div">
                                                             <button
-                                                                variant="light"
                                                                 className="delete-button"
                                                                 onClick={() =>
                                                                     handleDelete(
@@ -73,17 +100,10 @@ function Comments({ review }) {
                                                                 }
                                                             >
                                                                 {" "}
-                                                                DELETE
+                                                                Delete Comment
                                                             </button>
                                                         </div>
                                                     ) : null}
-                                                </div>
-                                                <p className="comment-text">
-                                                    "{comment.body}"
-                                                </p>
-                                                <CommentVotes
-                                                    comment={comment}
-                                                />
                                             </div>
                                         </div>
                                     </div>

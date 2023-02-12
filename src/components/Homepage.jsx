@@ -1,25 +1,46 @@
-import React from 'react'
+import React from "react";
+import Header from "./Header";
+import HeaderNav from "./HeaderNav";
 
 function Homepage() {
-  return (
-    <div>
-    <div className="homepage">
-      <big>
-        <h1 className='homepage-title'>Greetings, and welcome to the NC games!</h1>
-        <p className='homepage-info'>NC Games is a social games content rating and conversation website that allows users to browse reviews of specific games, submit comments on specific reviews, and rate review articles or review page comments.</p>
+    return (
+        <div>
+            <Header />
+            <HeaderNav />
+            <div className="homepage">
+                <big>
+                    <h1 className="homepage-title">
+                    Discover the Best in Gaming at NC Games: Your Ultimate Social Hub
+                    </h1>
 
-        <br></br>
+                    <br></br>
+                    
+                    <p className="homepage-info">
+                    Get ready to dive into the world of gaming with NC Games, your one-stop destination for social gaming content and conversations. Browse through our collection of reviews and get an insight into the best games available.
+                    </p>
 
-        <p className='homepage-info'>To log in, please click the "Login" button in the upper-right corner. You should be presented with a list of users to which you can log in. After logging in, you may browse all user-submitted reviews of all games on NC games. You can filter the reviews by the reviewed game's category using the drop-down menu. Whilst viewing all of the posted reviews, you can  click the "Read Review" option, where you can learn more about a single review and examine all of the comments that have been made on that review. You can also share your thoughts on the review by adding a personal comment.</p>
+                    <br></br>
 
-        <br></br>
+                    <p className="homepage-info">
+                    To fully engage with our community and make the most of your experience, we highly recommend logging in. Simply click the "Login" button located in the upper-right corner, select your username, and you're all set!
+                        <br></br>
+                    </p>
 
-        <p className='homepage-info'>Enjoy your time visiting the site!</p>
-      </big>
-    </div>
-  </div>
-  )
+                    <br></br>
+
+                    <p className="homepage-info">
+                    Once logged in, you'll have access to all the features that make NC Games the go-to place for gaming enthusiasts. Filter reviews by category, read through individual reviews, leave comments, and like other reviews and comments.
+                    </p>
+
+                    <br></br>
+                    
+                    <p className="homepage-info">
+                    Join the conversation and share your thoughts on the latest games. We hope you have a great time visiting our site!
+                    </p>
+                </big>
+            </div>
+        </div>
+    );
 }
 
-
-export default Homepage
+export default Homepage;

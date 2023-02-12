@@ -9,6 +9,11 @@ export const UserProvider = ({ children }) => {
     const [loggedInUser, setLoggedInUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [prevPath, setPrevPath] = useState("/");
+    const handlePrevPath = (path) => {
+        setPrevPath(path);
+    };
 
     return (
         <UserContext.Provider
@@ -21,6 +26,11 @@ export const UserProvider = ({ children }) => {
                 setIsLoading,
                 isError,
                 setIsError,
+                isLoggedIn,
+                setIsLoggedIn,
+                prevPath,
+                setPrevPath,
+                handlePrevPath,
             }}
         >
             {children}

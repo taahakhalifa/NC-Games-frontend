@@ -1,17 +1,23 @@
 import React from 'react'
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 
 
 function UserCard({ user, users }) {
   const navigate = useNavigate()
-  const { setLoggedInUser } = useContext(UserContext);
+  const { setLoggedInUser, setIsLoggedIn, isLoggedIn, prevPath, setPrevPath } = useContext(UserContext);
 
   const handleLogin = () => {
     setLoggedInUser(user)
-    navigate("/reviews")
+    setIsLoggedIn(true)
   }
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate(prevPath);
+    }
+  }, [isLoggedIn, prevPath]);
   
   return (
     <div >
