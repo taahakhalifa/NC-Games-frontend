@@ -10,12 +10,6 @@ function Pages({ reviews }) {
         setSearchParams(newParams);
     };
 
-    const setLimitQuery = (limitQuery) => {
-        const newParams = new URLSearchParams(searchParams);
-        newParams.set("order", limitQuery);
-        setSearchParams(newParams);
-    };
-
     const categoryQuery = searchParams.get("category");
 
 
