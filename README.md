@@ -2,6 +2,12 @@
 
 ---
 
+## Deoployed site
+
+The live site is available to view [here](https://ncgames-taahakhalifa.netlify.app/)
+
+---
+
 ## Introduction
 
 Introducing the dynamic NC-Games front-end project, the crown jewel of my front-end experience! With a seamless integration to its powerful back-end counterpart, located [here](https://github.com/taahakhalifa/taahakhalifa-NC-GAMES-BACKEND), this application is set to revolutionize the way you access and interact with games reviews.
