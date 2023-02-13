@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# NC-Games
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Introduction
 
-In the project directory, you can run:
+Introducing the dynamic NC-Games front-end project, the crown jewel of my front-end experience! With a seamless integration to its powerful back-end counterpart, located [here](https://github.com/taahakhalifa/taahakhalifa-NC-GAMES-BACKEND), this application is set to revolutionize the way you access and interact with games reviews.
 
-### `npm start`
+From sorting, ordering, and filtering, to optimistically adding and deleting comments, this application has got you covered. With a user-friendly interface and an optimistically added and deleted system, the process of creating and reviewing reviews has never been smoother.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Not to mention, this application is optimized for an optimal viewing experience on all devices - be it on your mobile, tablet, or desktop. With the utilization of cutting-edge media queries and conditional rendering, you'll have the ability to preview your comment before submitting it. Get ready to be blown away!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Reviews
 
-### `npm run build`
+-   View a list of all reviews related to games
+-   Each review displays an image, title, author and a `Read Review` button where a full insight to that review is
+-   Reviews can be sorted by many queries, as shown in the dropdown boxes
+-   Reviews can be ordered in either ascending or descending order
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Categories
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+-   View a list of all the games related to their respective categories
+-   Each category displays a slug, description and a `View Games` button where a full insight to each game related to that category is
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Comments
 
-### `npm run eject`
+-   Leave comments on a review
+-   View other comments
+-   Upvote or downvote comments
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Get ready to unleash a world of endless possibilities with reviews! But wait, there's a catch. To fully immerse yourself in the review experience and interact with them to your heart's desire, you need to be signed in. Don't worry, if you're not logged in, you'll still be able to gaze upon reviews, but without the ability to fully engage with them.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ensure you have the following software installed before diving into the setup process:"
 
-## Learn More
+```bash
+Node.js
+npm
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. `Clone the repository` to your local machine. To do this, open up your terminal and run the following command:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+git clone https://github.com/taahakhalifa/taahakhalifa-NC-GAMES-FRONTEND
+```
 
-### Code Splitting
+2. Now that you have cloned the repo, `open` it in your preferred code editor.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Next, `install the dependencies` required to run this project. To do this, `run the following command`:
 
-### Analyzing the Bundle Size
+```bash
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. Finally, `run the application` locally by running the following command:
 
-### Making a Progressive Web App
+```
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Congratulations! You've successfully set up the repository on your local machine. The application can now be accessed at http://localhost:3000

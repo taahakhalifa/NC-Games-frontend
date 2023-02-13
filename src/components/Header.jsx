@@ -68,7 +68,7 @@ function Header() {
                         className="Back-Button"
                         onClick={() => navigate("/")}
                     >
-                        Go Back
+                        Home
                     </button>
                 </header>
             )}
